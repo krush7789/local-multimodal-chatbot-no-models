@@ -6,6 +6,19 @@ Local multimodal assistant built with Streamlit + LangChain, supporting:
 - image understanding (LLaVA via `llama-cpp`)
 - audio transcription (Whisper)
 
+## Model Used
+
+- `Mistral-7B-Instruct-v0.3-Q6_K.gguf` (local chat model)
+
+## Main Imports (Libraries)
+
+- `streamlit`
+- `langchain`
+- `llama_cpp_python`
+- `chromadb`
+- `transformers`
+- `sentence-transformers`
+
 ## Project Layout
 
 - `app.py`: Streamlit application entrypoint.
@@ -51,8 +64,8 @@ docker build -t hospitalbot:latest .
 ```bash
 docker run --rm -p 8501:8501 \
   -e BOOTSTRAP_MODELS=1 \
-  -e HF_MODEL_REPO=TheBloke/Mistral-7B-Instruct-v0.1-GGUF \
-  -e HF_MODEL_FILE=mistral-7b-instruct-v0.1.Q2_K.gguf \
+  -e HF_MODEL_REPO=bartowski/Mistral-7B-Instruct-v0.3-GGUF \
+  -e HF_MODEL_FILE=Mistral-7B-Instruct-v0.3-Q6_K.gguf \
   -e CHROMA_DB_DIR=/app/data/chroma_db \
   -e CHAT_HISTORY_PATH=/app/data/chat_sessions \
   -v hospitalbot-data:/app/data \

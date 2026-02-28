@@ -1,0 +1,22 @@
+.git
+.gitignore
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+env/
+dist/
+build/
+
+# Runtime/generated data
+chroma_db/
+chat_sessions/*.json
+
+# Large local model artifacts are downloaded at startup in deployment
+models/*.gguf
+models/**/*.gguf

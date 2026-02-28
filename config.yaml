@@ -1,0 +1,15 @@
+model_path:
+  small: "./models/Mistral-7B-Instruct-v0.3-Q6_K.gguf"
+  large: "./models/Mistral-7B-Instruct-v0.3-Q6_K.gguf"
+
+model_type: "mistral"
+
+embeddings_path: "BAAI/bge-large-en-v1.5"
+
+model_config: 
+  'max_new_tokens': 256
+  'temperature' : 0
+  'context_length': 2048
+  'gpu_layers' : 0
+
+chat_history_path: "./chat_sessions/"

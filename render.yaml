@@ -1,0 +1,24 @@
+﻿services:
+  - type: web
+    name: hospitalbot
+    runtime: docker
+    plan: starter
+    autoDeploy: true
+    disk:
+      name: hospitalbot-data
+      mountPath: /app/data
+      sizeGB: 30
+    envVars:
+      - key: BOOTSTRAP_MODELS
+        value: "1"
+      - key: HF_MODEL_REPO
+        value: "bartowski/Mistral-7B-Instruct-v0.3-GGUF"
+      - key: HF_MODEL_FILE
+        value: "Mistral-7B-Instruct-v0.3-Q6_K.gguf"
+      - key: CHROMA_DB_DIR
+        value: "/app/data/chroma_db"
+      - key: CHAT_HISTORY_PATH
+        value: "/app/data/chat_sessions"
+      - key: HF_HOME
+        value: "/app/data/huggingface"
+
